@@ -1,0 +1,7 @@
+streamlit
+scikit-learn
+pandas
+matplotlib
+seaborn
+numpy  # Required for scikit-learn
+pickle5  # Optional, but useful for compatibility with pickle files
