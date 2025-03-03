@@ -13,30 +13,9 @@ import seaborn as sns
 from sklearn.model_selection import train_test_split, RandomizedSearchCV
 from sklearn.metrics import accuracy_score, confusion_matrix, classification_report
 import os
-import streamlit as st
-
 
 # Load dataset
-#df = pd.read_csv('BestCard_data.csv')
-
-uploaded_file = st.file_uploader("https://drive.google.com/file/d/1Sh6yARk8kKXj-MkvAWEmO8NJ_HnJBZMx/view?usp=sharing",type=["csv"])
-
-
-if uploaded_file is not None:
-    # Convert uploaded file to DataFrame
-    df = pd.read_csv(uploaded_file)
-
-    # Display the first few rows
-    st.write("📊 Preview of the dataset:")
-    st.write(df.head())
-
-    # Now safely use `.select_dtypes()`
-    numerical_df = df.select_dtypes(include=['number'])
-    st.write("📊 Preview of numerical columns:")
-    st.write(numerical_df.head())
-else:
-    st.warning("⚠️ Please upload a CSV file to proceed.")
-
+df = pd.read_csv('BestCard_data.csv')
 
 # Define features and target
 numerical_features = df.select_dtypes(include=['number']).columns.tolist()
