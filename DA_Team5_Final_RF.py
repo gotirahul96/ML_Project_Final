@@ -15,7 +15,7 @@ from sklearn.metrics import accuracy_score, confusion_matrix, classification_rep
 import os
 
 # Load dataset
-df = pd.read_csv('/Users/rahulgoti/Downloads/Final Project 2/BestCard_data.csv')
+df = pd.read_csv('BestCard_data.csv')
 
 # Define features and target
 numerical_features = df.select_dtypes(include=['number']).columns.tolist()
